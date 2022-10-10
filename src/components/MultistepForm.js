@@ -31,20 +31,23 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: 'none',
     color: theme.palette.text.secondary,
   },
+  ButtonStyle:{
+    justifyContent: "space-between"
+  },
 }));
 
 function getSteps() {
   return [
-    "Select master blaster campaign settings",
-    "Create an ad group",
-    "Create an ad",
+    "Basic Information",
+    "Personal Information",
+    "Address Information",
   ];
 }
 
 function getStepContent(stepIndex) {
   switch (stepIndex) {
     case 0:
-      return <SignUpForm />;
+      return <SignUpForm activeStep={getSteps}/>;
     case 1:
       return "What is an ad group anyways?";
     case 2:
@@ -74,7 +77,7 @@ function MultistepForm() {
   return (
     <>
       <Grid container justifyContent="center" className={classes.root}>
-        <Grid item xs={10} md={10}>
+        <Grid item xs={12} md={10}>
           <Paper className={classes.paper}>
             <Stepper activeStep={activeStep} alternativeLabel>
               {steps.map((label) => (
@@ -83,12 +86,12 @@ function MultistepForm() {
                 </Step>
               ))}
             </Stepper>
-            <Container>
+            <Container >
               {activeStep === steps.length ? (
                 <Container>
-                  <Typography className={classes.instructions}>
+                  <Box className={classes.instructions}>
                     All steps completed
-                  </Typography>
+                  </Box>
                   <Button
                     color="secondary"
                     variant="contained"
@@ -118,6 +121,8 @@ function MultistepForm() {
                   >
                     {activeStep === steps.length - 1 ? "Finish" : "Next"}
                   </Button>
+              
+                  
                 </Container>
               )}
             </Container>
