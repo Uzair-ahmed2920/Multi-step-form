@@ -27,7 +27,6 @@ function SignUpForm() {
       <TextField id="outlined-basic" label="Email" variant="outlined" />
       <TextField id="outlined-basic" label="Phone Number" variant="outlined" />
       <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-      <TextField id="outlined-basic" label="Outlined" variant="outlined" />
     </form>
     </>
   )
