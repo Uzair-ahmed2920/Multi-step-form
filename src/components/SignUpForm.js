@@ -28,7 +28,12 @@ function SignUpForm() {
       <TextField id="outlined-basic" label="Phone Number" variant="outlined" />
       <TextField id="outlined-basic" label="Password" variant="outlined" />
       <TextField id="outlined-basic" label="Confirm Password" variant="outlined" />
+      <TextField id="outlined-basic" label="Address" variant="outlined" />
+      <TextField id="outlined-basic" label="City" variant="outlined" />
+      <TextField id="outlined-basic" label="State" variant="outlined" />
+      <TextField id="outlined-basic" label="Zip Code" variant="outlined" />
     </form>
+    <button>Sign Up</button>
     </>
   )
 }
