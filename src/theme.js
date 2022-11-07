@@ -21,6 +21,11 @@ const theme = responsiveFontSizes(createTheme({
         fontSize: '2.5rem',
         fontFamily: 'Roboto',
       },
+      h4: {
+        fontSize: '2.5rem',
+        fontFamily: 'Raleway',
+        color: '#00e676',
+      },
     },
     palette: {
       background: {
