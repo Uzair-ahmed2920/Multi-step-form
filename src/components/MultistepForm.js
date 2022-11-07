@@ -4,22 +4,23 @@ import {
   Step,
   StepLabel,
   Button,
-  Typography,
   Container,
   Grid,
   Paper,
   Box,
 } from "@material-ui/core";
-import { makeStyles} from "@material-ui/styles";
+import { makeStyles } from "@material-ui/styles";
 import SignUpForm from "./SignUpForm";
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
   },
   backButton: {
-    marginRight: theme.spacing(1),
+    marginLeft: theme.spacing(14),
+  },
+  nextButton: {
+    marginRight: theme.spacing(14),
   },
   instructions: {
     marginTop: theme.spacing(1),
@@ -27,27 +28,25 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(2),
-    textAlign: 'center',
-    boxShadow: 'none',
+    textAlign: "center",
+    boxShadow: "none",
     color: theme.palette.text.secondary,
   },
-  ButtonStyle:{
-    justifyContent: "space-between"
+  ButtonStyle: {
+    justifyContent: "space-between",
+    marginTop: theme.spacing(2),
   },
 }));
 
 function getSteps() {
-  return [
-    "Basic Information",
-    "Personal Information",
-    "Address Information",
-  ];
+  return ["Basic Information", "Personal Information", "Address Information"];
 }
-
+const steps = getSteps();
 function getStepContent(stepIndex) {
   switch (stepIndex) {
     case 0:
-      return <SignUpForm activeStep={getSteps}/>;
+      // props pass to the component
+      return <SignUpForm Text={steps[0]} />;
     case 1:
       return "What is an ad group anyways?";
     case 2:
@@ -60,7 +59,6 @@ function getStepContent(stepIndex) {
 function MultistepForm() {
   const [activeStep, setActiveStep] = React.useState(0);
   const classes = useStyles();
-  const steps = getSteps();
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -86,7 +84,7 @@ function MultistepForm() {
                 </Step>
               ))}
             </Stepper>
-            <Container >
+            <Container>
               {activeStep === steps.length ? (
                 <Container>
                   <Box className={classes.instructions}>
@@ -104,25 +102,26 @@ function MultistepForm() {
                 <Container>
                   <Box className={classes.instructions}>
                     {getStepContent(activeStep)}
+                    <Grid container  className={classes.ButtonStyle}>
+                      <Button
+                        disabled={activeStep === 0}
+                        onClick={handleBack}
+                        color="secondary"
+                        variant="contained"
+                        className={classes.backButton}
+                      >
+                        Back
+                      </Button>
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={handleNext}
+                        className={classes.nextButton}
+                      >
+                        {activeStep === steps.length - 1 ? "Finish" : "Next"}
+                      </Button>
+                    </Grid>
                   </Box>
-                  <Button
-                    disabled={activeStep === 0}
-                    onClick={handleBack}
-                    color="secondary"
-                    variant="contained"
-                    className={classes.backButton}
-                  >
-                    Back
-                  </Button>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={handleNext}
-                  >
-                    {activeStep === steps.length - 1 ? "Finish" : "Next"}
-                  </Button>
-              
-                  
                 </Container>
               )}
             </Container>

@@ -9,31 +9,32 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(1),
         width: '80%',
         textAlign: 'center',
+        backgroundColor: '#e8f5e9',
+      },
+      '&:hover fieldset': {
+        borderColor: '#00e676',
+      },
+      '& fieldset': {
+        borderColor: '#00e676',
       },
       fontFamily:{
-        
-      }
-    },
+        fontFamily: 'Raleway',
+      },
+  },
   }));
 
-function SignUpForm() {
+function SignUpForm(props) {
     const classes = useStyles();
   return (
     <>
-    <Typography variant='h4'> Basic Info</Typography>
+    <Typography variant='h4'>{props.Text} </Typography>
     <form  className={classes.root} noValidate autoComplete="off">
-      <TextField id="outlined-basic" label="First Name" variant="outlined" />
-      <TextField id="outlined-basic" label="Last Name" variant="outlined" />
-      <TextField id="outlined-basic" label="Email" variant="outlined" />
-      <TextField id="outlined-basic" label="Phone Number" variant="outlined" />
-      <TextField id="outlined-basic" label="Password" variant="outlined" />
-      <TextField id="outlined-basic" label="Confirm Password" variant="outlined" />
-      <TextField id="outlined-basic" label="Address" variant="outlined" />
-      <TextField id="outlined-basic" label="City" variant="outlined" />
-      <TextField id="outlined-basic" label="State" variant="outlined" />
-      <TextField id="outlined-basic" label="Zip Code" variant="outlined" />
+      <TextField  id="outlined-basic" label="First Name" variant="outlined" />
+      <TextField  id="outlined-basic" label="Last Name" variant="outlined" />
+      <TextField  id="outlined-basic" label="Email" variant="outlined" />
+      <TextField  id="outlined-basic" label="Password" variant="outlined" />
+      <TextField  id="outlined-basic" label="Confirm Password" variant="outlined" />
     </form>
-    <button>Sign Up</button>
     </>
   )
 }
