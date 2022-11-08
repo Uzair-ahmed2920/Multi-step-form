@@ -34,6 +34,8 @@ function SignUpForm(props) {
       <TextField  id="outlined-basic" label="Email" variant="outlined" />
       <TextField  id="outlined-basic" label="Password" variant="outlined" />
       <TextField  id="outlined-basic" label="Confirm Password" variant="outlined" />
+
+      
     </form>
     </>
   )
