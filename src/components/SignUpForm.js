@@ -6,11 +6,17 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
     root: {
       '& > *': {
-        margin: theme.spacing(1),
-        width: '80%',
+        margin: theme.spacing(2),
+        width: '70%',
         textAlign: 'center',
-        backgroundColor: '#e8f5e9',
+        
+        [`& fieldset`]: {
+          borderRadius: 50,
+          backgroundColor: '#e8f5e9',
+          boxShadow: "0px 15px 6px -11px rgba(131,219,144,0.83)",
+    },
       },
+
       '&:hover fieldset': {
         borderColor: '#00e676',
       },
