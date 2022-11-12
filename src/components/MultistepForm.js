@@ -22,16 +22,16 @@ const useStyles = makeStyles((theme) => ({
   mainContainer: {
     display: "grid",
     gridTemplateColumns: "45% 55%",
-    '@media (max-width:768px)': {
+    "@media (max-width:768px)": {
       gridTemplateColumns: "100%",
     },
     gridTemplateRows: "100vh",
   },
   imageContainer: {
-    '@media (max-width:768px)': {
+    "@media (max-width:768px)": {
       display: "none",
     },
-height: "100vh",
+    height: "100vh",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -64,7 +64,6 @@ height: "100vh",
     justifyContent: "space-between",
     marginTop: theme.spacing(2),
   },
-  
 }));
 
 function getSteps() {
@@ -101,11 +100,12 @@ function MultistepForm() {
     setActiveStep(0);
   };
 
+  
+
   return (
     <>
       <Box className={classes.mainContainer}>
-        <Box className={classes.imageContainer}>
-        </Box>
+        <Box className={classes.imageContainer}></Box>
         <Grid container justifyContent="center" className={classes.root}>
           <Grid item xs={12} md={10}>
             <Paper className={classes.paper}>
