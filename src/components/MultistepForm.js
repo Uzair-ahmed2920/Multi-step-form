@@ -99,9 +99,6 @@ function MultistepForm() {
   const handleReset = () => {
     setActiveStep(0);
   };
-
-  
-
   return (
     <>
       <Box className={classes.mainContainer}>
