@@ -2,7 +2,8 @@
 import React from 'react'
 import{TextField, Typography} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-
+import { FormInputText } from './FormInputText';
+import { useForm } from "react-hook-form";
 const useStyles = makeStyles((theme) => ({
     root: {
       '& > *': {
@@ -11,37 +12,50 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
         
         [`& fieldset`]: {
-          borderRadius: 50,
+          boxShadow: "0px 15px 6px -11px rgba(131,219,144,0.83)", 
+          border : '2px solid #00e676',
+        },
+        [`& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline` ]: {
+          borderColor: 'green',
+          color: 'green',
+        },
+        [`& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline`]: {
+          borderColor: 'green',
+          color: 'green',
+        },
+        [`& .MuiInputLabel-outlined`]: {
+          color: 'green',
+        },
+        //chnage text color of input text
+        [`& .MuiOutlinedInput-input`]: {
+          color: 'green',  
+        },
+        //Change background color of input text field
+        [`& .MuiOutlinedInput-root`]: {
           backgroundColor: '#e8f5e9',
-          boxShadow: "0px 15px 6px -11px rgba(131,219,144,0.83)",
-    },
-      },
-
-      '&:hover fieldset': {
-        borderColor: '#00e676',
-      },
-      '& fieldset': {
-        borderColor: '#00e676',
-      },
-      fontFamily:{
-        fontFamily: 'Raleway',
+          borderRadius: 50,
+        },
       },
   },
   }));
 
+
 function SignUpForm(props) {
+  const { control } = useForm();
     const classes = useStyles();
   return (
     <>
     <Typography variant='h4'>{props.Text} </Typography>
     <form  className={classes.root} noValidate autoComplete="off">
-      <TextField  id="outlined-basic" label="First Name" variant="outlined" />
+      <TextField 
+      id="outlined-basic" 
+      label="First Name"
+      variant="outlined" />
       <TextField  id="outlined-basic" label="Last Name" variant="outlined" />
       <TextField  id="outlined-basic" label="Email" variant="outlined" />
       <TextField  id="outlined-basic" label="Password" variant="outlined" />
       <TextField  id="outlined-basic" label="Confirm Password" variant="outlined" />
-
-      
+      <FormInputText name="firstName" control={control} label="First Name" />
     </form>
     </>
   )
