@@ -7,6 +7,7 @@ const theme = responsiveFontSizes(createTheme({
         'Roboto',
         'Raleway',
         'Open Sans',
+        'sans-serif',
       ].join(','),
       h1: {
         fontSize: '5rem',
