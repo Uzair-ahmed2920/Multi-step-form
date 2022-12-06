@@ -56,6 +56,7 @@ function SignUpForm(props) {
       <TextField  id="outlined-basic" label="Password" variant="outlined" />
       <TextField  id="outlined-basic" label="Confirm Password" variant="outlined" />
       <FormInputText name="firstName" control={control} label="First Name" />
+      <FormInputText name="lastName" control={control} label="Last Name" />
     </form>
     </>
   )
