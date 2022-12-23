@@ -13,6 +13,7 @@ import {
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import SignUpForm from "./SignUpForm";
+import PersonalInfoForm from "./PersonalInfoForm";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
@@ -67,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function getSteps() {
-  return ["Basic Information", "Personal Information", "Address Information"];
+  return ["Basic Information", "Contact Information", "Personal Information"];
 }
 const steps = getSteps();
 function getStepContent(stepIndex) {
@@ -76,7 +77,7 @@ function getStepContent(stepIndex) {
       // props pass to the component
       return <SignUpForm Text={steps[0]} />;
     case 1:
-      return "What is an ad group anyways?";
+      return <PersonalInfoForm Text={steps[1]} />;
     case 2:
       return "This is the bit I really care about!";
     default:
