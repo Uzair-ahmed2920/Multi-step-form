@@ -1,6 +1,6 @@
 
 import React from 'react'
-import{TextField, Typography} from '@material-ui/core';
+import{Typography} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { FormInputText } from './FormInputText';
 import { useForm } from "react-hook-form";
@@ -47,15 +47,8 @@ function SignUpForm(props) {
     <>
     <Typography variant='h4'>{props.Text} </Typography>
     <form  className={classes.root} noValidate autoComplete="off">
-      <TextField 
-      id="outlined-basic" 
-      label="First Name"
-      variant="outlined" />
-      <TextField  id="outlined-basic" label="Last Name" variant="outlined" />
-      <TextField  id="outlined-basic" label="Email" variant="outlined" />
-      <TextField  id="outlined-basic" label="Password" variant="outlined" />
-      <TextField  id="outlined-basic" label="Confirm Password" variant="outlined" />
       <FormInputText name="firstName" control={control} label="First Name" />
+      <FormInputText name="middleName" control={control} label="Middle Name" />
       <FormInputText name="lastName" control={control} label="Last Name" />
     </form>
     </>
