@@ -8,10 +8,10 @@ export const FormInputText = ({ name, control, label }) => {
     <Controller 
         name={name}
         control={control}
-        rules={{ required: true  , minLength: 2 , maxLength: 20 }}
+        rules={{ required: "This Field is required"  , minLength: 2 , maxLength: 20 }}
         render={({ field: { onChange, value }, fieldState: { error }}) => (
             <TextField
-            id="outlined-basic"
+                id="outlined-basic"
                 label={label}
                 variant="outlined"
                 value={value}
