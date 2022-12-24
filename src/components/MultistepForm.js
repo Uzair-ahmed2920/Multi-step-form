@@ -79,7 +79,7 @@ function getStepContent(stepIndex) {
     case 1:
       return <PersonalInfoForm Text={steps[1]} />;
     case 2:
-      return "This is the bit I really care about!";
+      return <PersonalInfoForm Text={steps[2]} />;
     default:
       return "Unknown stepIndex";
   }
@@ -118,7 +118,7 @@ function MultistepForm() {
                 {activeStep === steps.length ? (
                   <Container>
                     <Box className={classes.instructions}>
-                      All steps completed
+                      <h1>Thank You For Your Submission</h1>
                     </Box>
                     <Button
                       color="secondary"
